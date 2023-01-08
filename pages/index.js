@@ -3,7 +3,7 @@ import React from 'react';
 import {Product, FooterBanner, HeroBanner} from '../components';
 import {client} from '../lib/client';
 
-const Home = ({products, bannerData}: any,) => {
+const Home = ({products, bannerData}) => {
   return (
     <>
       <HeroBanner heroBanner ={bannerData.length & bannerData[0]}/>
@@ -12,7 +12,7 @@ const Home = ({products, bannerData}: any,) => {
         <p>Speakers of many ...</p>
       </div>
       <div className="products-container">
-        {products?.map((product: { name: any; }) => product.name)}
+        {products?.map((product) => product.name)}
         
       </div>
       <FooterBanner />
