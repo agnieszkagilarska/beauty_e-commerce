@@ -14,7 +14,7 @@ const Home = ({products, bannerData}) => {
         {products?.map((product) => <Product key = {product._id} product = {product} />)}
         
       </div>
-      <FooterBanner />
+      <FooterBanner FooterBanner={bannerData&&bannerData[0]} />
     </>
   )
 }
