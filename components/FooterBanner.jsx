@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import { urlFor } from '../lib/client';
 
+//komponent renderujący dolną część strony, zawierjące informacje o zniżce, przecenionych produktach
+
 const FooterBanner = ({ footerBanner:{discount, largeText1, largeText2, saleTime, smallText, midText, desc, product, buttonText, image}}) => {
   return (
     <div className="footer-banner-container">

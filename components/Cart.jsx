@@ -7,12 +7,14 @@ import toast from 'react-hot-toast';
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
-//koszyk
+
+//koszyk, realizowanie podstawowych funkcjonalności 
+
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
 
-  const handleCheckout = async () => {
+  const handleCheckout = async () => { //połączenie ze stripe w celu realizowania płatości
     const stripe = await getStripe();
 
     const response = await fetch('/api/stripe', {
@@ -44,6 +46,8 @@ const Cart = () => {
           <span className="cart-num-items">({totalQuantities} rzeczy)</span>
         </button>
 
+{/* sprawdzanie czy koszyk jest pusty  */}
+
         {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
@@ -59,7 +63,7 @@ const Cart = () => {
             </Link>
           </div>
         )}
-
+{/* wyświetlanie produktów w koszyku  */}
         <div className="product-container">
           {cartItems.length >= 1 && cartItems.map((item) => (
             <div className="product" key={item._id}>
@@ -71,7 +75,7 @@ const Cart = () => {
                 </div>
                 <div className="flex bottom">
                   <div>
-                  <p className="quantity-desc">
+                   <p className="quantity-desc"> {/*zwiększanie i zmniejszanie ilości produktów */}
                     <span className="minus" onClick={() => toggleCartItemQuanitity(item._id, 'dec') }>
                     <AiOutlineMinus />
                     </span>
@@ -90,7 +94,7 @@ const Cart = () => {
               </div>
             </div>
           ))}
-        </div>
+         </div> {/*podsumowanie koszyka, obliczanie, wyświetlanie sumy końcowej */}
         {cartItems.length >= 1 && (
           <div className="cart-bottom">
             <div className="total">

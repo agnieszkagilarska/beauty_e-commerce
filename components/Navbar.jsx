@@ -5,6 +5,8 @@ import { AiOutlineShopping } from 'react-icons/ai'
 import {Cart} from './';
 import { useStateContext} from '../context/StateContext';
 
+// górna część strony zawierająca logo i nazwę sklepu 
+
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (

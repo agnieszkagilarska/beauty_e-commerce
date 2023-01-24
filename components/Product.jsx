@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import { urlFor } from '../lib/client';
 
+//komponent odpowiadający za produkt na stronnie, wyświetlanie go, przekierowanie do odpowiednich ścieżek
+
 const Product = ({product: {image, name, slug, price}}) => {
   return (
     <div>

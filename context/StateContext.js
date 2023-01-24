@@ -13,12 +13,16 @@ export const StateContext = ({ children }) => {
   let foundProduct;
   let index;
 
+// logika dodawania produktu do koszyka, obliczania ceny 
+
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find((item) => item._id === product._id);
     
     setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
-    
+
+// sprawdzanie produktów w koszyku, aktualizacja
+
     if(checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
         if(cartProduct._id === product._id) return {
@@ -34,9 +38,11 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, { ...product }]);
     }
 
-    toast.success(`${qty} ${product.name} added to the cart.`);
-  } 
+//komunikat po poprawnym dodaniu do koszyka
 
+    toast.success(`${qty} ${product.name} dodany do koszyka.`);
+  } 
+// logika usuwania z koszyka
   const onRemove = (product) => {
     foundProduct = cartItems.find((item) => item._id === product._id);
     const newCartItems = cartItems.filter((item) => item._id !== product._id);
@@ -51,6 +57,7 @@ export const StateContext = ({ children }) => {
     index = cartItems.findIndex((product) => product._id === id);
     const newCartItems = cartItems.filter((item) => item._id !== id)
 
+// logika zwiększania i zmniejszania ilości produktów w koszyku
     if(value === 'inc') {
       setCartItems([...newCartItems, { ...foundProduct, quantity: foundProduct.quantity + 1 } ]);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price)

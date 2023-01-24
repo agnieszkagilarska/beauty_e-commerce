@@ -5,7 +5,7 @@ export default{
     fields: [
         {
             name: 'image',
-            title: 'Image',
+            title: 'obrazek',
             type: 'array',
             of: [{type: 'image'}],
             options: {
@@ -14,7 +14,7 @@ export default{
         },
         {
             name: 'name',
-            title: 'Name',
+            title: 'nazwa',
             type: 'string',
         },
         {
@@ -29,12 +29,12 @@ export default{
         },
         {
             name: 'price',
-            title: 'Price',
+            title: 'cena',
             type: 'number',
         },
         {
             name: 'details',
-            title: 'Details',
+            title: 'opis',
             type: 'string',
         }
     ]
