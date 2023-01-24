@@ -40,21 +40,21 @@ const Cart = () => {
         className="cart-heading"
         onClick={() => setShowCart(false)}>
           <AiOutlineLeft />
-          <span className="heading">Your Cart</span>
-          <span className="cart-num-items">({totalQuantities} items)</span>
+          <span className="heading">Twój koszyk</span>
+          <span className="cart-num-items">({totalQuantities} rzeczy)</span>
         </button>
 
         {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
-            <h3>Your shopping bag is empty</h3>
+            <h3>Twój koszyk jest pusty</h3>
             <Link href="/">
               <button
                 type="button"
                 onClick={() => setShowCart(false)}
                 className="btn"
               >
-                Continue Shopping
+                Kontynuuj zakupy
               </button>
             </Link>
           </div>
@@ -67,7 +67,7 @@ const Cart = () => {
               <div className="item-desc">
                 <div className="flex top">
                   <h5>{item.name}</h5>
-                  <h4>${item.price}</h4>
+                  <h4>{item.price} zł</h4>
                 </div>
                 <div className="flex bottom">
                   <div>
@@ -94,12 +94,12 @@ const Cart = () => {
         {cartItems.length >= 1 && (
           <div className="cart-bottom">
             <div className="total">
-              <h3>Subtotal:</h3>
-              <h3>${totalPrice}</h3>
+              <h3>Suma:</h3>
+              <h3>{totalPrice} zł</h3>
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick={handleCheckout}>
-                Pay with Stripe
+                Kup teraz
               </button>
             </div>
           </div>

@@ -33,24 +33,13 @@ const ProductDetails  = ({product,products}) => {
                 </div> 
             </div>
             <div className="product-detail-desc">
-                <h1>{name}</h1>
-                <div className= "reviews">
-                  <div>
-                    <AiFillStar/>
-                    <AiFillStar/>
-                    <AiFillStar/>
-                    <AiFillStar/>
-                    <AiOutlineStar/>
-                  </div>
-                  <p>
-                    (20)
-                  </p>
-                </div>
-                <h4>Details:</h4>
+                <h1>{name}</h1><br/>
+  
+                <h4>Opis:</h4>
                 <p>{details}</p>
-                <p className="price">${price}</p>
+                <p className="price">{price} zł</p>
                 <div className="quantity">
-                  <h3>Quantity:</h3>
+                  <h3>Ilość:</h3>
                   <p className="quantity-desc">
                     <span className="minus" onClick={decQty}><AiOutlineMinus/></span>
                     <span className="num">{qty}</span>
@@ -60,16 +49,16 @@ const ProductDetails  = ({product,products}) => {
                 <div className="buttons">
                   <button type="button" 
                   className="add-to-cart" 
-                  onClick={() => onAdd(product, qty)}>Add to Cart</button>
+                  onClick={() => onAdd(product, qty)}>Dodaj do koszyka</button>
                    <button type="button" 
                   className="buy-now" 
-                  onClick={handleBuyNow}>Buy Now</button>
+                  onClick={handleBuyNow}>Kup teraz</button>
                 </div>
             </div>
         </div>
 
         <div className="maylike-products-wrapper">
-                <h2>You may also like</h2>
+                <h2>Może ci się też spodobać</h2>
                 <div className="marquee">
                   <div className="maylike-products-container track">
                     {products.map((item) => (

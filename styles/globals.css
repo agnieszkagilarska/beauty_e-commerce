@@ -249,16 +249,10 @@ flex-direction: column;
   margin:18px;
 }
 .footer-banner-image{
-
-  max-width:230px;
-  max-height:95px;
+  max-width:400px;
+  max-height:300px;
   width: auto;
   height: auto;
-  /* position: absolute;
-  top: -35%;
-  left: 8%; 
-  top: -25%;
-  left: 25%; */
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -648,7 +642,7 @@ margin-top: 160px;
     width: 100%;
     left: 100%;
     top: 6%;
-    height: 56%
+    height: 56%;
   }
   .banner-desc .left h3{
     font-weight: 900;
