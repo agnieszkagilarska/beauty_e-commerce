@@ -4,6 +4,8 @@ import{AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-ico
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
+// strona produktu
+
 const ProductDetails  = ({product,products}) => {
      const {image, name, details, price} = product;
      const [index, setIndex] = useState(0);
@@ -71,6 +73,7 @@ const ProductDetails  = ({product,products}) => {
     </div>
   )
 }
+  //statyczne prerenderowanie
 
 export const getStaticPaths = async () => {
     const query = `*[_type == "product"] {

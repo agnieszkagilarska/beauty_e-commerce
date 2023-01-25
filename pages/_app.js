@@ -5,6 +5,8 @@ import '../styles/globals.css'
 import {Layout} from '../components' 
 import {StateContext} from '../context/StateContext'
 
+// szkielet logiczny aplikacji
+
 function MyApp({ Component, pageProps }) {
   return(
   <StateContext>

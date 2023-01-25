@@ -48,7 +48,7 @@ export default {
         },
         {
             name: 'discount',
-            title: 'Discount',
+            title: 'Rabat',
             type: 'string',
         },
         {
