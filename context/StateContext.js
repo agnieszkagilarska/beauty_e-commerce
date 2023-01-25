@@ -70,6 +70,7 @@ export const StateContext = ({ children }) => {
       }
     }
   }
+// nie może być ilości produktu mniejszej od zera
 
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);

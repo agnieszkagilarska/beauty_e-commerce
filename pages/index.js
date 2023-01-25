@@ -2,6 +2,8 @@ import React from 'react';
 import {Product, FooterBanner, HeroBanner} from '../components';
 import {client} from '../lib/client';
 
+// wyświetlanie listy produktów
+
 const Home = ({products, bannerData}) => {
   return (
     <>
